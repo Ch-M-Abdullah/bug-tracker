@@ -1,0 +1,44 @@
+#bugs .single-bug:hover{
+    background-color: rgb(51, 52, 53);
+}
+
+.single-bug{
+    padding: 1%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#bugs .edit-bug-btn{
+    display: none;
+}
+#bugs .delete-bug-btn{
+    display: none;
+}
+
+#bugs p{
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.mark-as-done-btn{
+    background-color: grey;
+    padding: 0.5%;
+    position: absolute;
+    top:2%;
+    right:2%;
+}
+
+#bugs .mark-as-done-btn{
+    display: none;
+}
+
+
+.bug-img{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+#bugs .bug-img{
+    display: none;
+}

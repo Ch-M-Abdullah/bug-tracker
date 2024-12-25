@@ -1,0 +1,17 @@
+<%= render "shared/navbar" %>
+
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Projects" %>
+
+<h1>Projects</h1>
+
+<div id="projects">
+  <% @projects.each do |project| %>
+    <%= link_to project do %>
+      <%= render project, project:project %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "+", new_project_path, class: "new-project-btn", style: current_user.role != "admin" ? "display:none" : "display: block; text-align: center; font-size: 4rem" %>

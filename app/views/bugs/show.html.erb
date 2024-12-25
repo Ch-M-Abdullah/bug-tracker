@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bug, bug:@bug %>
+
+<hr/>
+
+<p style="display: block; text-align:center; font-size:2rem">Assigned Users</p>
+
+<table style=<%= @assigned_users.length > 0 ? "width:100%" : "display:none" %> >
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%@assigned_users.each do |user|%>
+      <tr>
+        <td style="text-align:center;"><%= user.id %></td>
+        <td style="text-align:center;"><%= user.name %></td>
+        <td style="text-align:center;"><%= user.email %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<div style="<%=(!@assigned_users.include?(current_user) && @bug.status == false) ? "display:flex; justify-content:center; align-items:center; margin: 5%" : "display:none;" %>" >
+  <%= button_to "Assign Bug To Me", assign_user_bug_path(@bug), method: :patch, style: "align-text:center; padding:0.5%; background-color:#ddd; color:black;" %>
+</div>
+
+<div>
+  |
+  <%= link_to "Back to bugs", bugs_path %>
+</div>

@@ -1,0 +1,38 @@
+<nav class="navbar" style="background-color:rgb(50, 51, 52) ; display: flex; justify-content:space-between ; align-items:center; height: 7rem; padding-right: 1%; padding-left:1%;" >
+
+    <div style="display: flex; justify-content:center; align-items:center; gap:0.5rem;">
+        <%= image_tag "bugzilla.svg", style: "height:5rem; width:auto;"%>
+        <p style="font-size: 2rem;">Bugzilla</p>
+    </div>
+    
+
+    <div class="navbar-options" style="display: flex; justify-content:space-between ; align-items:center; gap:1rem;">
+
+    <%= link_to new_project_path, class:"navbar-option", style: current_user.role == "admin" ? "height:100%; display: flex; justify-content:space-evenly; align-items:center;" : "display:none" do %>
+        <%= image_tag "add-file.png", style: "height:2rem; width:auto;" %>
+        <p style="text-align: center;">Add Project</p>
+    <%end%>
+
+    <%= link_to new_bug_path, class:"navbar-option", style: current_user.role == "qa" ? "height:100%; display: flex; justify-content:space-evenly; align-items:center;" : "display:none" do %>
+        <%= image_tag "add-file.png", style: "height:2rem; width:auto;" %>
+        <p style="text-align: center;">Add Bug</p>
+    <%end%>
+
+
+    <%= link_to projects_path, class:"navbar-option", style: "height:100%; display: flex; justify-content:space-evenly; align-items:center;" do %>
+        <%= image_tag "find.png", style: "height:2rem; width:auto;" %>
+        <p style="text-align: center;">View Projects</p>
+    <% end %>
+
+    <%= link_to bugs_path, class:"navbar-option", style: "height:100%; display: flex; justify-content:space-evenly; align-items:center;" do %>
+        <%= image_tag "find.png", style: "height:2rem; width:auto;" %>
+        <p style="text-align: center;">View Bugs</p>
+    <% end %>
+
+
+
+
+    </div>
+
+
+</nav>

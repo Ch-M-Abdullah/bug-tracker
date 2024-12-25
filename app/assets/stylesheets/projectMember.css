@@ -1,0 +1,43 @@
+.project-member-form{
+    max-width: 60%;
+    margin: 0 auto;
+    background-color: grey;
+    border: 1px solid #d3d3d3;
+    padding: 2%;
+    border-radius: 1%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-project-member-field{
+    margin-bottom: 2%;
+}
+
+.add-project-member-input{
+    /* width: 100%; */
+    padding: 2%;
+    border: 1px solid #d3d3d3;
+    border-radius: 1%;
+    background-color: #fff;
+    color: #333;
+}
+
+
+.project-member-form label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.add-project-member-btn{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5%;
+    background-color: rgb(34, 34, 34);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}

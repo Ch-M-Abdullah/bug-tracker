@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(34, 34, 34);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.login-container{
+    margin: 2% 25%;
+    padding: 5% 0%;
+    background-color: black;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10%;
+}
+
+
+.login-container .field{
+    margin: 1%;
+}
+
+
+
+.sign-up-container{
+    margin: 2% 25%;
+    padding: 5% 0%;
+    background-color: black;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10%;
+}
+
+.sign-up-container .field{
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.forgot-password-container{
+    margin: 2% 25%;
+    padding: 5% 0%;
+    background-color: black;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10%;
+}

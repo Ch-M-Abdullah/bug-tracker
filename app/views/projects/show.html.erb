@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @project %>
+
+<hr/>
+<p style="display: block; text-align: center; font-size: 2rem;">Project Members</p>
+
+<table style=<%= @project_users.length > 0 ? "width:100%;" : "display:none;" %> >
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th style=<%= current_user.role != "admin" ? "display:none" : "" %>>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @project_users.each do |project_user| %>
+      <tr>
+        <td style="text-align:center;"><%= project_user.id %></td>
+        <td style="text-align:center;"><%= project_user.name %></td>
+        <td style="text-align:center;"><%= project_user.email %></td>
+        <td style="text-align:center;"><%= project_user.role %></td>
+        <td style=<%= current_user.role != "admin" ? "display:none" : "text-align:center;" %> > <%= button_to 'Remove', project_member_path(project_user), method: :delete, data: { confirm: 'Are you sure?' }, style:"padding: 0.5rem 1rem; border: none; border-radius: 5%; background-color: grey; color: #fff; cursor: pointer; font-weight: bold; margin: 2%" %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<div style="display: flex; justify-content:center; align-items:center;">
+  <%= link_to "+", new_project_member_path(project_id: @project.id), style: current_user.role == "admin" ? "font-size: 3rem;" : "display:none" %>
+</div>
+
+
+
+<div style="margin: 5% 0%;">
+  |
+  <%= link_to "Back to projects", projects_path %>
+
+</div>

@@ -1,0 +1,15 @@
+<div id="<%= dom_id project %>" class="project-container">
+  <p style="font-size: 1.5rem;">
+    <strong>Name:</strong>
+    <%= project.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= project.description %>
+  </p>
+
+  <%= button_to "Destroy this project", project, method: :delete, class: "delete-project-btn", style: current_user.role != "admin" ? "display:none" : "" %>
+  <%= link_to "Edit this project", edit_project_path(project), class: "edit-project-btn", style: current_user.role != "admin" ? "display:none" : "" %>
+
+</div>

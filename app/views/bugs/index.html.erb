@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Bugs" %>
+<%= render "shared/navbar" %>
+
+<h1>Bugs</h1>
+
+<%= form_with url: bugs_path, method: :get, local: true do %>
+  <div style="display: flex; justify-content:center; align-items:center;  margin-top:1%; margin-bottom:2%; height:2rem;">
+    <%= text_field_tag :search, params[:search], placeholder: "Search Bug...", style:"height: 100%; width: 30%;" %>
+    <%= submit_tag "Search", style: "font-size:120%; padding:0.4rem; text-align:center; margin:0px; border:none; border-radius: 5% 20% 20% 5%" %>
+  </div>
+<%end%>
+
+<div id="bugs">
+  <% @bugs.each do |bug| %>
+    <%= link_to bug do %>
+      <%= render bug, bug:bug %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "+", new_bug_path, style: current_user.role== "qa" ? "display:block; text-align:center; font-size: 4rem; margin-bottom: 5%;" : "display:none;" %>

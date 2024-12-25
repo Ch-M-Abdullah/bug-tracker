@@ -1,0 +1,93 @@
+#projects{
+  gap: 1rem;
+}
+
+.project-container{
+  padding: 1%;
+  margin-bottom: 1%;
+}
+#projects .project-container{
+  border: 1px solid white;
+  position: relative;
+}
+#projects .project-container:hover{
+  background-color: rgb(51, 52, 53);
+}
+
+.delete-project-btn{
+  display: none;
+}
+
+#projects .delete-project-btn{
+  display:none;
+}
+
+.project-container .delete-project-btn{
+  display: flex;
+  position:absolute;
+  right: 1%;
+  top: 2%;
+  border-radius: 2%;
+  background-color:#929292;
+}
+
+#projects .edit-project-btn{
+  display: none;
+}
+
+.project-container .edit-project-btn{
+  position: absolute;
+  right:1%;
+  top:7%;
+  background-color:grey;
+  padding:0.3rem;
+  border-radius:0.1rem;
+}
+
+
+
+
+.new-project-container, .edit-project-container {
+    font-family: Arial, sans-serif;
+    margin: 1%;
+    padding: 2%;
+    background-color: rgb(51, 52, 53);
+    border: 1px solid #ccc;
+    border-radius: 1%;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .new-project-header {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  
+  .new-project-container form {
+    margin-top: 1%;
+    padding: 2%;
+    background-color: #3c3b3b;
+    border: 1px solid #ddd;
+    border-radius: 1%;
+  }
+  
+  
+  .new-project-container form input, .new-project-container form textarea, .new-project-container form select {
+    width: 95%;
+    max-width: 95%;
+    min-width: 95%;
+    padding: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size:large;
+  }
+
+  table, th, td{
+    border: 1px solid grey;
+  }

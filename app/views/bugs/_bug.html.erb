@@ -1,0 +1,43 @@
+<div id="<%= dom_id bug %>" style="position: relative;" class="single-bug">
+
+
+  <%if bug.image.attached? %>
+    <div class="bug-img" style="">
+      <%= image_tag bug.image, style: "width: 50%; height:auto;" %>
+    </div>
+  <%end%>
+
+  <div style="position: relative;">
+    <p style="font-size: 1.5rem;">
+      <strong>Name:</strong>
+      <%= bug.name %>
+    </p>
+
+    <p style="font-size: 1.5rem;">
+      <strong>Type:</strong>
+      <%= bug.category %>
+    </p>
+
+    <p style="font-size: 1.2rem;">
+      <strong>Project:</strong>
+      <%= bug.project.name %>
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+      <%= bug.status == true ? "Solved" : "Pending" %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= bug.description %>
+    </p>
+
+
+    <%= link_to "Edit this bug", edit_bug_path(bug), class: "edit-bug-btn", style: current_user.role == "qa" ? "background-color: grey; padding: 0.5%; position: absolute; top:2%; right:2%;" : "display: none;" %>
+    <%= button_to "Delete this bug", bug, method: :delete, class: "delete-bug-btn", style: current_user.role == "qa" ? "background-color: grey; padding: 0.5%; position: absolute; top:35%; right:2%;" : "display:none;" %>
+
+    <%= button_to "Mark as Done", mark_done_bug_path(bug), method: :patch, class: current_user.role == "developer" && bug.status != true && bug.users.include?(current_user) ? "mark-as-done-btn" : "", style: current_user.role == "developer" && bug.status != true && bug.users.include?(current_user) ? "" : "display:none;" %>
+  </div>
+
+</div>

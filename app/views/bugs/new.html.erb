@@ -1,0 +1,16 @@
+<% content_for :title, "New bug" %>
+
+<div class="new-project-container">
+
+  <h1 style="text-align: center;">New Bug</h1>
+
+  <%= render "form", bug: @bug, projects: @projects %>
+
+
+  <br>
+
+  <div>
+    <%= link_to "Back to bugs", bugs_path %>
+  </div>
+
+</div>

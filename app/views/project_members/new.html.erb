@@ -1,0 +1,30 @@
+<p style="text-align: center; font-size: 2rem;">Add Project Member</p>
+<%= form_with(model: @project_member, html: { class: "project-member-form" }) do |form| %>
+  <% if @project_member.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@project_member.errors.count, "error") %> prohibited this project member from being saved:</h2>
+
+      <ul>
+        <% @project_member.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="add-project-member-field">
+    <label for="user_id">User</label>
+    <%= form.collection_select :user_id, @users, :id, :name, prompt: "Select a User", class: "add-project-member-input" %>
+  </div>
+
+  <div class="add-project-member-field">
+    <label for="project_id">Project</label>
+    <%= form.collection_select :project_id, @projects, :id, :name, prompt: "Select a project", prompt:true, selected: @selected_project.try(:id).to_i, class: "add-project-member-input" %>
+  </div>
+
+
+
+  <div class="add-project-member-field">
+    <%= form.submit "Add", class: "add-project-member-btn" %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+@media screen and (max-width:760px) {
+    .navbar{
+        flex-direction: column;
+        height: fit-content !important;
+    }
+    .navbar-options{
+        flex-direction: column;
+        width: 100%;
+        border-top: 1px solid white;
+    }
+    
+    .navbar-option{
+        border-top: 1px solid rgba(225, 225, 225, 0.2);
+    }
+} 
